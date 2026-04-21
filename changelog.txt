@@ -1,0 +1,52 @@
+====== PocketBook Spec Viewer — Change Log ======
+
+===== v1.3.5 (2026-04-21) =====
+
+  * Migrated to **@amplitude/unified** SDK (v1.0.18) — single bundle replaces separate analytics + experiment SDKs
+  * Added built-in **Session Replay** (sampleRate: 1) via unified `initAll()` initialization
+  * Eliminated CSP errors — SDK is now fully self-contained IIFE bundle, no dynamic script loading
+  * Suppressed ad-blocker console spam: disabled remote config, reduced flush retries, silenced SDK logger
+  * Reduced content_scripts from 3 JS files to 2 (amplitude-unified.min.js + xlsx-js-style.min.js)
+
+===== v1.3.0 (2026-04-21) =====
+
+  * Added **XLSX export** for multi-device comparison table and single device panel
+  * Added **DOC export** (Word) with Uni-Specs color scheme — no extra library needed
+  * Added **PDF export** (opens print-friendly page for saving as PDF)
+  * Export respects active filters (category, status, screen size)
+  * XLSX files styled to match **Uni-Specs.xlsx** color scheme: blue (Display), yellow (Hardware), green (Connectivity), orange (Audio), purple (Software), tan (Physical)
+  * Bold headers, thin borders, center-aligned values in exported XLSX
+  * DOC export splits large tables into **5 devices per page** with automatic page breaks
+  * Compact DOC layout: 8pt font, 10mm margins for maximum content fit
+  * Single device panel footer includes 📊 XLSX, 📃 DOC, 📄 PDF export buttons
+  * **Version check** now uses GitHub public repo instead of wiki page — faster and more reliable
+  * Added **Amplitude analytics** — tracks page views, exports, filter usage, panel interactions, and update banner
+  * Added **Amplitude Experiment** SDK (v0.21.0) — enables A/B testing and feature flags from Amplitude dashboard
+  * Helper `getVariant(flagKey)` available for conditional feature rollouts
+  * Switched from SheetJS mini to **xlsx-js-style** library for cell styling support
+
+===== v1.2.0 (2026-03-25) =====
+
+  * Added automatic **update notification** — extension checks the wiki guide page for newer versions and shows a banner if available
+  * Renamed **PPI → DPI** in Uni-Specs labels (Greyscale and RGB)
+  * Added **DPI (RGB)** row to Uni-Specs
+  * **Resolution (Greyscale)** now matches both "Resolution" and "Resolution (Greyscale)" wiki keys
+  * Version check results cached for 24 hours
+
+===== v1.1.0 (2026-03-23) =====
+
+  * Added **multi-device comparison table** on wiki start page
+  * Added **category filters** (E-Readers / E-Notes / Digital Frames)
+  * Added **status filters** (Production / Development)
+  * Added **screen size filters** (6" / 7" / 8" / 10"+)
+  * Added **drag-to-pan** navigation in comparison table
+  * Device data cached for 1 hour
+  * Added progress indicator during data loading
+
+===== v1.0.0 (2026-03-22) =====
+
+  * Initial release
+  * **Side panel** with device specs on individual wiki pages
+  * **Uni-Specs / Wiki** view toggle
+  * Parses hardware and software specification tables
+  * Status badge display (Production / Development / Discontinued)
