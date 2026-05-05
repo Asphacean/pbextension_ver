@@ -1,4 +1,9 @@
 ====== PocketBook Spec Viewer — Change Log ======
+===== v1.3.6 (2026-05-05) =====
+
+  * Added **Charging power (min - max)** row to multi-device comparison table and exports
+  * Added **Power Delivery (PD)** row to multi-device comparison table and exports
+  * Both rows use connectivity (green) color in XLSX export
 
 ===== v1.3.5 (2026-04-21) =====
 
