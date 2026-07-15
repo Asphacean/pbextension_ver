@@ -1,4 +1,9 @@
 ====== PocketBook Spec Viewer — Change Log ======
+===== v1.3.10 (2026-07-16) =====
+
+  * Renamed **Digitizer** row to **Stylus** in multi-device comparison table and exports
+  * Old wiki key `digitizer` still matches, mapped to new **Stylus** label
+
 ===== v1.3.6 (2026-05-05) =====
 
   * Added **Charging power (min - max)** row to multi-device comparison table and exports
